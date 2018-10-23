@@ -22,7 +22,7 @@ ENGINE = INNODB;
 /* Ajout des clés etrangeres */
 
 ALTER TABLE service
-ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
+ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
 /* Story 2 - Insertion des 20 services */
