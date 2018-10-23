@@ -15,8 +15,8 @@ ENGINE = INNODB
 /* Ajout des clés étrangères */
 
 ALTER TABLE message
-ADD FOREIGN KEY (id_exp) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
-ADD FOREIGN KEY (id_recev) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
+ADD FOREIGN KEY (id_exp) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD FOREIGN KEY (id_recev) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /* Story 2 - Insertion des 30 messages envoyés */
 
