@@ -60,3 +60,30 @@ VALUES
 INSERT INTO message (id_exp, id_recev, contenu, date_heure_envoi)
 VALUES 
     (26, 24, 'Je suis en retard', '2018-10-30 16:56:34');
+
+/* Story 8 - afficher les conversation d’un utilisateur */
+
+INSERT INTO message (id_exp, id_recev, contenu, date_heure_envoi)
+VALUES 
+    (7, 5, 'Je serais là dans 4 min', '2018-11-01 16:00:34');
+    (7, 9, 'Je serais là dans 6 min', '2018-11-02 16:00:34');
+
+SELECT contenu
+FROM message
+WHERE 
+(id_exp = 7)
+ORDER BY date_heure_envoi DESC;
+
+/* Story 9 - afficher les messages d’une conversation */ 
+
+INSERT INTO message (id_exp, id_recev, contenu, date_heure_envoi)
+VALUES 
+    (9, 3, 'Compris, dans combien de temps serais-tu là ?', '2018-10-30 17:56:34');
+
+SELECT contenu
+FROM message
+WHERE 
+(id_exp = 3 AND id_recev = 9)
+OR
+(id_exp = 9 AND id_recev = 3)
+ORDER BY date_heure_envoi DESC;
