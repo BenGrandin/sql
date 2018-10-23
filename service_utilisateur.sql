@@ -22,3 +22,5 @@ VALUES 	('1', '12', '2018-01-21 21:45:00'),
  		('9', '5', '2018-12-2 20:45:00'),
 		('10', '19', '2018-3-3 18:45:00')
 		
+ALTER TABLE service_utilisateur
+ADD FOREIGN KEY (id_service) REFERENCES service(id_service) ON DELETE CASCADE ON UPDATE CASCADE;
