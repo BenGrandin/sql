@@ -12,6 +12,12 @@ CREATE TABLE message (
 CHARACTER SET 'utf8'
 ENGINE = INNODB
 
+/* Ajout des clés étrangères */
+
+ALTER TABLE message
+ADD FOREIGN KEY (id_exp) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
+ADD FOREIGN KEY (id_recev) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
+
 /* Story 2 - Insertion des 30 messages envoyés */
 
 INSERT INTO message (id_exp, id_recev, contenu, date_heure_envoi)
@@ -48,3 +54,4 @@ VALUES
     (5, 7, 'Je suis en retard', '2018-10-28 14:00:00'),
     (6, 1, 'Je suis en retard', '2018-10-29 14:00:00'),
     (7, 5, 'Je suis en retard', '2018-10-30 14:00:00')
+
