@@ -51,3 +51,7 @@ VALUES
 	(20, 'tintinrie', 'expert en tintin', 'square de tournesol', '45123', 'milouplace', 'france', '1991-08-03 03:31:21', 'jaime tintin');
 
 
+/* Story 5 - Requete pour créer service - */
+
+INSERT INTO service
+VALUES ('bergerie', 'savoir gérer la brebis', 'boulevard du berger perdu', '64340', 'shepherdland', 'france', '1991-08-21 21:11:14', 'jaime les berger');
