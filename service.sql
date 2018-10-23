@@ -19,6 +19,11 @@ PRIMARY KEY (id_service)
 CHARACTER SET 'utf8'
 ENGINE = INNODB;
 
+/* Ajout des clés etrangeres */
+
+ALTER TABLE service
+ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE
+
 
 /* Story 2 - Insertion des 20 services */
 
@@ -41,6 +46,8 @@ VALUES
 	(15, 'animalerie', ' vendre des animaux', 'square du zanimal', ' 34098', ' petland', 'france', '2005-11-11 09:09:09', 'jaime les animaux'),
 	(16, 'herboristerie', 'utiliser la fleur', 'boulevard de la plante', '12345', 'plantplace', 'france', '2098-12-30 08:08:08', 'jaime les plantes'),
 	(17, 'porsherie', 'garage de porshe', 'avenue de la porshe', '45634', 'porshetown', 'france', ' 2345-08-23 07:07:07', 'jaime les porshe'),
-	(18,'proferie', 'former un prof', 'chemin du prof', '34765', 'teacherland', 'france', '2123-04-01 06:06:06', 'jaime les profs'),
+	(18, 'proferie', 'former un prof', 'chemin du prof', '34765', 'teacherland', 'france', '2123-04-01 06:06:06', 'jaime les profs'),
 	(19, 'boulerie', 'enseigner la petanque', 'impasse de la boule', '09678', 'ballcity','france', '2098-05-12 05:05:05', 'jaime les boules'),
 	(20, 'tintinrie', 'expert en tintin', 'square de tournesol', '45123', 'milouplace', 'france', '1991-08-03 03:31:21', 'jaime tintin');
+
+
