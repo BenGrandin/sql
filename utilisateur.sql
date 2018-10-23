@@ -1,11 +1,11 @@
-/* Creation de la table utilisateur */
+/* Story 1 - Creation de la table utilisateur */
 
 USE DATABASE sql;
 
 CREATE TABLE utilisateur (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	email VARCHAR(100) NOT NULL UNIQUE,
-	mdp VARCHAR(20) NOT NULL,
+	mdp VARCHAR(191) NOT NULL,
 	pseudo VARCHAR(20) NOT NULL UNIQUE,
 	adresse VARCHAR (100) NULL,
 	code_postale VARCHAR (20) NULL,
@@ -19,7 +19,7 @@ CREATE TABLE utilisateur (
 CHARACTER SET 'utf8'
 ENGINE = INNODB;
 
-/* Story 2 */
+/* Story 2 - Création de 25 utilisateurs */
 
 INSERT INTO utilisateur(email, mdp, pseudo, adresse, code_postale, ville, pays, numero_portable, numero_fixe, date_inscription)
 VALUES 
@@ -50,8 +50,16 @@ VALUES
 	('fausseadresse24@yahoo.com', '123456', 'fake24', '24 rue du lac', '75000', 'Paris', 'France', '0600000024', NULL, '2018-10-22');
 
 
-	/* Story 3 */
+	/* Story 3 - Ajout d'un utilisateur sans  préciser tous les champs */
 
 INSERT INTO utilisateur(email, mdp, pseudo, date_inscription)
 VALUES 
 	('fausseadresse25@yahoo.com', '123456', 'fake25', '2018-10-22')
+
+	/* Story 4 - Mise à jour du profil Story 3 avec toutes les informations de la Story 1 */
+
+UPDATE utilisateur
+SET adresse = "25 rue du lac", code_postale = "75000", ville = "Paris", pays = "France", numero_portable = "0600000025", numero_fixe = "0101010101"
+WHERE id="26";
+
+
