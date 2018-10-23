@@ -65,7 +65,7 @@ VALUES
 
 INSERT INTO message (id_exp, id_recev, contenu, date_heure_envoi)
 VALUES 
-    (7, 5, 'Je serais là dans 4 min', '2018-11-01 16:00:34');
+    (7, 5, 'Je serais là dans 4 min', '2018-11-01 16:00:34'),
     (7, 9, 'Je serais là dans 6 min', '2018-11-02 16:00:34');
 
 SELECT contenu
