@@ -1,12 +1,10 @@
-/* Story 1 - Création de la table service_utilisateur */
-
 USE database_sql;
 CREATE TABLE service_utilisateur (
     id_service INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_utilisateur VARCHAR(100) NOT NULL,
     date_heure_inscription DATETIME NOT NULL,
-    PRIMARY KEY(id_service)
-)
+    PRIMARY KEY(id),
+    CONSTRAINT fk_service_utilisateur FOREIGN KEY (id_service) REFERENCES service(id) on delete cascade on update cascade
 CHARACTER SET 'utf8'
 ENGINE = INNODB
 
@@ -23,3 +21,4 @@ VALUES 	('1', '12', '2018-01-21 21:45:00'),
  		('8', '8', '2018-4-12 21:45:00'),
  		('9', '5', '2018-12-2 20:45:00'),
 		('10', '19', '2018-3-3 18:45:00')
+		
