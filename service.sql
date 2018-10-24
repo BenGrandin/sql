@@ -29,7 +29,7 @@ ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON
 
 INSERT INTO service (id_utilisateur, nom_service, description_service, adresse_service, code_postale_service, ville_service, pays_service, date_heure_service, info_complementaire)
 VALUES 
-	(1, 'boulangerie', 'faire du pain', 'boulevard du pain', '69069', 'Breadland', 'France', '2012-11-1 00:00:00', 'jaime le pain'),
+	(1, 'boulangerie', 'faire du pain', 'boulevard du pain', '69069', 'Breadland', 'France', '2019-11-1 00:00:00', 'jaime le pain'),
 	(2, 'poissonerie', 'vendre du poisson', 'avenue du thon', '78000', 'Fishcity','France', '2018-10-25 12:23:45', 'jaime le poisson'),
 	(3, 'patisserie', 'faire des gateaux', 'chemin du paris brest', '54789', 'cookieplace','France', '2017-09-01 22:22:22', ' jaime les gateaux'),
 	(4, 'chocolaterie', 'faire du chocolat', 'rue du cacao', '34678', 'Chcolatetown','france', '2016-08-02 21:21:21', 'jaime le chocolat'),
@@ -55,3 +55,25 @@ VALUES
 
 INSERT INTO service (id_utilisateur, nom_service, description_service, adresse_service, code_postale_service, ville_service, pays_service, date_heure_service, info_complementaire)
 VALUES ('bergerie', 'savoir gérer la brebis', 'boulevard du berger perdu', '64340', 'shepherdland', 'france', '1991-08-21 21:11:14', 'jaime les berger');
+
+
+
+/* Story 10 - Rechercher liste de tous les services - */
+
+INSERT INTO service (id_utilisateur, nom_service, description_service, adresse_service, code_postale_service, ville_service, pays_service, date_heure_service, info_complementaire)
+VALUES
+(1, 'boulangerie', 'faire du pain', 'avenue de la fougasse', '69069', 'Breadland', 'France', '2025-10-02 10:02:43', 'nouvelle super boulangerie'),
+(3, 'boulangerie', 'faire du pain', 'rue du croissant', '69069', 'Breadland', 'France', '2025-10-02 10:02:43', 'nouvelle super boulangerie'),
+(5, 'boulangerie', 'faire du pain', 'impasse de la chocolatine', '69069', 'Breadland', 'France', '2025-10-02 10:02:43', 'nouvelle super boulangerie')
+
+
+SELECT service.*
+FROM service
+WHERE service.id_service NOT IN (SELECT id_service FROM service_utilisateur)
+AND service.date_heure_service > NOW()
+AND service.nom_service LIKE '%boulangerie%'
+ORDER BY ASC; 
+
+/* Dédicasse du groupe <3 */
+
+
