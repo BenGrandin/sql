@@ -95,3 +95,14 @@ LEFT JOIN utilisateur as U2
 /* A base d'alias pour notre PO */
 
 
+
+/* Story 12 */
+
+
+DELETE FROM service
+WHERE id= 10;
+
+
+
+
+
