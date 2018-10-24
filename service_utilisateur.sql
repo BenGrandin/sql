@@ -1,3 +1,5 @@
+/* Story 1 - Création de la table service_utilisateur */
+
 USE database_sql;
 CREATE TABLE service_utilisateur (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -5,7 +7,7 @@ CREATE TABLE service_utilisateur (
     id_utilisateur INT NOT NULL,
     date_heure_inscription DATETIME NOT NULL,
     PRIMARY KEY(id),
-    CONSTRAINT fk_service_utilisateur FOREIGN KEY (id_service) REFERENCES service(id) on delete cascade on update cascade
+    CONSTRAINT fk_service_utilisateur FOREIGN KEY (id_service) REFERENCES service(id) on delete cascade on update cascade)
 CHARACTER SET 'utf8'
 ENGINE = INNODB
 
@@ -25,3 +27,9 @@ VALUES 	('1', '12', '2018-01-21 21:45:00'),
 		
 ALTER TABLE service_utilisateur
 ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/* Story 13 */
+
+DELETE FROM service_utilisateur
+WHERE id = 7
+
