@@ -1,7 +1,8 @@
 USE database_sql;
 CREATE TABLE service_utilisateur (
-    id_service INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    id_utilisateur VARCHAR(100) NOT NULL,
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id_service INT NOT NULL,
+    id_utilisateur INT NOT NULL,
     date_heure_inscription DATETIME NOT NULL,
     PRIMARY KEY(id),
     CONSTRAINT fk_service_utilisateur FOREIGN KEY (id_service) REFERENCES service(id) on delete cascade on update cascade
@@ -23,4 +24,4 @@ VALUES 	('1', '12', '2018-01-21 21:45:00'),
 		('10', '19', '2018-3-3 18:45:00')
 		
 ALTER TABLE service_utilisateur
-ADD FOREIGN KEY (id_service) REFERENCES service(id_service) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE;
