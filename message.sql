@@ -87,3 +87,8 @@ WHERE
 OR
 (id_exp = 9 AND id_recev = 3)
 ORDER BY date_heure_envoi DESC;
+
+/* Story 15 */
+
+DELETE FROM MESSAGE
+WHERE id = 27;
