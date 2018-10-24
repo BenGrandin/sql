@@ -90,6 +90,7 @@ LEFT JOIN service_utilisateur as SU
     ON S.id_service = SU.id_service
 LEFT JOIN utilisateur as U2
     ON U2.id = SU.id_utilisateur
+WHERE S.id_service = 8
 
 
 /* A base d'alias pour notre PO */
