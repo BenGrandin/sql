@@ -53,7 +53,7 @@ VALUES
 /* Story 5 - Requete pour créer service - */
 
 INSERT INTO service (id_utilisateur, nom_service, description_service, adresse_service, code_postale_service, ville_service, pays_service, date_heure_service, info_complementaire)
-VALUES ('bergerie', 'savoir gérer la brebis', 'boulevard du berger perdu', '64340', 'shepherdland', 'france', '1991-08-21 21:11:14', 'jaime les berger');
+VALUES (8, 'bergerie', 'savoir gérer la brebis', 'boulevard du berger perdu', '64340', 'shepherdland', 'france', '1991-08-21 21:11:14', 'jaime les berger');
 
 
 
