@@ -101,16 +101,14 @@ WHERE id= 10;
 
 /* Story 16 */
 
-INSERT INTO service_utilisateur (id_service, id_utilisateur, date_heure_inscription)
-VALUES 	('5', '8', '2018-03-21 21:45:00')
-
-SELECT 
+SELECT
 S.nom_service, S.description_service, S.adresse_service, 
 S.code_postale_service, S.ville_service, S.pays_service, 
 S.date_heure_service, S.info_complementaire,
 U.pseudo as pseudo_propose_service,
-U2.pseudo as pseudo_inscrit,  U2.date_heure_inscription, U2.email,
-U2.adresse, U2.code_postale, U2.ville, U2.pays, U2.numero_portable
+U2.pseudo as pseudo_inscrit,  SU.date_heure_inscription, U2.email,
+U2.adresse, U2.code_postale, U2.ville, U2.pays, U2.numero_portable,
+(SELECT COUNT(id_service) FROM service_utilisateur WHERE id_utilisateur = 8) as Total
 FROM service as S
 LEFT JOIN utilisateur as U 
     ON U.id = S.id_utilisateur
@@ -119,7 +117,7 @@ LEFT JOIN service_utilisateur as SU
 LEFT JOIN utilisateur as U2
     ON U2.id = SU.id_utilisateur
 WHERE SU.id_utilisateur = 8
-ORDER BY U2.date_heure_inscription, U2.ville DESC;
+ORDER BY SU.date_heure_inscription, U2.ville DESC;
 
 
 
