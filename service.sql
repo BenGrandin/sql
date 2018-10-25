@@ -1,6 +1,5 @@
 /* Table service */
 
-
 USE database_sql
 
 CREATE TABLE service (
@@ -92,17 +91,35 @@ LEFT JOIN utilisateur as U2
     ON U2.id = SU.id_utilisateur
 WHERE S.id_service = 8
 
-
 /* A base d'alias pour notre PO */
-
 
 
 /* Story 12 */
 
-
 DELETE FROM service
 WHERE id= 10;
 
+/* Story 16 */
+
+INSERT INTO service_utilisateur (id_service, id_utilisateur, date_heure_inscription)
+VALUES 	('5', '8', '2018-03-21 21:45:00')
+
+SELECT 
+S.nom_service, S.description_service, S.adresse_service, 
+S.code_postale_service, S.ville_service, S.pays_service, 
+S.date_heure_service, S.info_complementaire,
+U.pseudo as pseudo_propose_service,
+U2.pseudo as pseudo_inscrit,  U2.date_heure_inscription, U2.email,
+U2.adresse, U2.code_postale, U2.ville, U2.pays, U2.numero_portable
+FROM service as S
+LEFT JOIN utilisateur as U 
+    ON U.id = S.id_utilisateur
+LEFT JOIN service_utilisateur as SU
+    ON S.id_service = SU.id_service
+LEFT JOIN utilisateur as U2
+    ON U2.id = SU.id_utilisateur
+WHERE SU.id_utilisateur = 8
+ORDER BY U2.date_heure_inscription, U2.ville DESC;
 
 
 
