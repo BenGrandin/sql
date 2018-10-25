@@ -110,8 +110,8 @@ S.code_postale_service, S.ville_service, S.pays_service,
 S.date_heure_service, S.info_complementaire,
 U.pseudo as pseudo_propose_service,
 U2.pseudo as pseudo_inscrit,  SU.date_heure_inscription, U2.email,
-U2.adresse, U2.code_postale, U2.ville, U2.pays, U2.numero_portable
-(SELECT COUNT(id_service) as Total FROM service WHERE SU.id_utilisateur = 8)
+U2.adresse, U2.code_postale, U2.ville, U2.pays, U2.numero_portable,
+(SELECT COUNT(id_service) FROM service_utilisateur WHERE id_utilisateur = 8) as Total
 FROM service as S
 LEFT JOIN utilisateur as U 
     ON U.id = S.id_utilisateur
