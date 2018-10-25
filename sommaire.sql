@@ -185,8 +185,8 @@ VALUES (8, 'bergerie', 'savoir gérer la brebis', 'boulevard du berger perdu', '
 
 /*story 6*/
 
-INSERT INTO service_utilisateur (id_service, id_utilisateur, date_heure_inscription)
-VALUES ('1','13', '2018-10-7 12:45:00')
+INSERT INTO service_utilisateur (id_utilisateur, date_heure_inscription)
+VALUES (13, '2018-10-7 12:45:00');
 
 /* Story 7 - créer la requête qui permettra d’envoyer un message */
 
