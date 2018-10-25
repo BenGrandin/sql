@@ -269,6 +269,9 @@ WHERE id = 5;
 
 /*story 15*/
 
+DELETE FROM MESSAGE
+WHERE id = 27;
+
 /*story 16*/
 
 SELECT S.*,
